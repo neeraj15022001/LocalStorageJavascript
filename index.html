@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Set Item -->
+    <h2>Set Items</h2>
+    <input type="text" id="key" placeholder="key" />
+    <input type="text" id="value" placeholder="value" />
+    <button class="setItem" onclick="setItem()">SetItems</button>
+
+    <!-- Remove Item -->
+    <h2>Remove Item</h2>
+    <input type="text" id="removeField" placeholder="key" />
+    <button class="removeItem" onclick="removeItem()">RemoveItem</button>
+
+    <!-- Get Item -->
+    <h2>Get Item</h2>
+    <input type="text" id="getField" placeholder="key" />
+    <button class="getItem" onclick="getItem()">Get Item</button>
+
+    <!-- Clear -->
+    <h2>Clear</h2>
+    <button class="clear" onclick="clearStorage()">Clear</button>
+
+    <script>
+        function setItem() {
+            const key = document.getElementById("key").value
+            const value = document.getElementById("value").value
+            console.log(key, value)
+            localStorage.setItem(key, value);
+        }
+        function getItem() {
+            const getField = document.getElementById("getField").value
+            console.log(localStorage.getItem(getField))
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+        }
+        function removeItem() {
+            const removeField = document.getElementById("removeField").value
+            localStorage.removeItem(removeField)
+        }
+    </script>
+  </body>
+</html>
+
+
+<!-- {} in function -->
